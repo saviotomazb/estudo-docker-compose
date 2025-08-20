@@ -8,9 +8,9 @@ Este repositório contém um exemplo simples de servidor **Apache (httpd)** roda
 
 ```
 .
-├── docker-compose.yml   # Configuração do Docker Compose
-└── htdocs/              # Pasta com os arquivos do site
-    └── index.html       # Página inicial
+├── docker-compose.yml
+└── htdocs/
+    └── index.html
 ```
 
 ---
@@ -39,9 +39,7 @@ docker compose up -d
 
 ### 3. Acessar a aplicação
 Abra o navegador em:  
-👉 [http://localhost:8080](http://localhost:8080)
-
-Se tudo estiver certo, você verá a página `index.html` localizada em `htdocs/`.
+[http://localhost:8080](http://localhost:8080)
 
 ---
 
