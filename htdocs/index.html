@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Docker Compose</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background: #0d6efd;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0d6efd;
+      margin-top: 0;
+    }
+    pre {
+      background: #222;
+      color: #eee;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: monospace;
+    }
+    .tip {
+      background: #e7f3ff;
+      border-left: 5px solid #0d6efd;
+      padding: 10px;
+      margin: 15px 0;
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      background: #f1f1f1;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Guia Docker Compose 🚀</h1>
+    <p>Aprenda como funciona e crie sua primeira aplicação</p>
+  </header>
+
+  <section>
+    <h2>O que é Docker Compose?</h2>
+    <p>O <b>Docker Compose</b> é uma ferramenta que permite definir e gerenciar múltiplos containers Docker usando um único arquivo <code>docker-compose.yml</code>.</p>
+    
+    <div class="tip">
+      📌 Com ele, você pode subir toda a sua aplicação (frontend, backend, banco de dados) com apenas <code>docker-compose up</code>.
+    </div>
+  </section>
+
+  <section>
+    <h2>Estrutura de um arquivo <code>docker-compose.yml</code></h2>
+    <pre><code>version: "3.9"
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html</code></pre>
+
+    <p>Nesse exemplo:</p>
+    <ul>
+      <li><code>services</code> → define os containers.</li>
+      <li><code>web</code> → nome do serviço.</li>
+      <li><code>image</code> → qual imagem será usada (nginx).</li>
+      <li><code>ports</code> → mapeia a porta do host para o container.</li>
+      <li><code>volumes</code> → monta uma pasta local no container.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Criando uma aplicação simples</h2>
+    <p>1. Crie a pasta do projeto:</p>
+    <pre><code>mkdir minha-app
+cd minha-app</code></pre>
+
+    <p>2. Dentro dela, crie um arquivo <code>docker-compose.yml</code>:</p>
+    <pre><code>version: "3.9"
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html</code></pre>
+
+    <p>3. Crie uma pasta <code>html</code> e adicione um <code>index.html</code>:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Minha App&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá, Docker Compose! 🚀&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <p>4. Inicie a aplicação:</p>
+    <pre><code>docker-compose up -d</code></pre>
+
+    <div class="tip">
+      Acesse em: 👉 <a href="http://localhost:8080" target="_blank">http://localhost:8080</a>
+    </div>
+  </section>
+
+  <footer>
+    Criado como guia didático de Docker Compose • © 2025
+  </footer>
+</body>
+</html>
